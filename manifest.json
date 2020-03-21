@@ -2,7 +2,7 @@
   "name": "Raw Githack",
   "version": "0.1",
   "description": "Viewing html files with raw.githack.com made easier.",
-  "permissions": ["https://github.com/*"],
+  "permissions": ["tabs"],
   "icons": {
     "16": "icon/16.png",
     "32": "icon/32.png",

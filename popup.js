@@ -64,7 +64,6 @@ function formatURL() {
   const url = ($inputUrl.value = decodeURIComponent($inputUrl.value.trim()))
 
   targetUrl = maybeConvertUrl(url)
-  console.log(targetUrl)
   if (targetUrl) {
     $inputUrl.classList.remove('invalid')
     $inputUrl.classList.add('valid')
@@ -88,10 +87,25 @@ function setValid() {}
 
 $inputUrl.addEventListener('input', formatURL, false)
 
+function openUrl(url) {
+  window.open(url, '_blank')
+}
+
 $form.addEventListener('submit', function(event) {
   event.preventDefault()
 
   if (targetUrl) {
-    window.open(targetUrl, '_blank')
+    openUrl(targetUrl)
+  }
+})
+
+chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+  if (tabs.length > 0 && $inputUrl.value.length === 0) {
+    const url = tabs[0].url || ''
+    const convertedUrl = maybeConvertUrl(url)
+
+    if (convertedUrl && convertedUrl.endsWith('.html')) {
+      openUrl(convertedUrl)
+    }
   }
 })
