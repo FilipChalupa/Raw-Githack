@@ -1,6 +1,6 @@
 {
   "name": "Raw Githack",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Viewing html files with raw.githack.com made easier.",
   "permissions": ["tabs"],
   "icons": {
