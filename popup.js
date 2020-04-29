@@ -83,23 +83,21 @@ function maybeConvertUrl(url) {
   }
 }
 
-function setValid() {}
-
 $inputUrl.addEventListener('input', formatURL, false)
 
+const tabs = (window.browser ? browser : chrome).tabs
+
 function openUrl(url) {
-  window.open(url, '_blank')
+  // window.open(url, '_blank') does not work in Firefox during auto-open (see below)
+  tabs.create({url})
+  window.close()
 }
 
 $form.addEventListener('submit', function(event) {
   event.preventDefault()
-
-  if (targetUrl) {
-    openUrl(targetUrl)
-  }
+  targetUrl && openUrl(targetUrl)
 })
-
-chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
+tabs.query({ active: true, currentWindow: true }, tabs => {
   if (tabs.length > 0 && $inputUrl.value.length === 0) {
     const url = tabs[0].url || ''
     const convertedUrl = maybeConvertUrl(url)
