@@ -2,6 +2,8 @@
 
 [Google Chrome](https://chrome.google.com/webstore/detail/raw-githack/iichepgnbggmoaijfiphjodmhkbijmkf?hl=en) and [Firefox](https://addons.mozilla.org/cs/firefox/addon/raw-githack/) extension for [raw.githack.com](https://raw.githack.com/).
 
+![Screenshot](screenshot.png)
+
 ## Credits
 
 - Big thanks to [@ondras](https://github.com/ondras) for Firefox port.
