@@ -2,7 +2,6 @@
   "name": "Raw Githack",
   "version": "0.2",
   "description": "Viewing html files with raw.githack.com made easier.",
-  "privacy_policy_url": "https://filipchalupa.cz/Raw-Githack/privacy.html",
   "permissions": ["tabs"],
   "icons": {
     "16": "icon/16.png",
