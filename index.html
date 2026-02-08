@@ -3,7 +3,6 @@
 <head>
   <title>Raw Githack Extension</title>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=https://chromewebstore.google.com/detail/raw-githack/iichepgnbggmoaijfiphjodmhkbijmkf">
   <meta name="color-scheme" content="light dark" />
   <style>
     body {
@@ -20,7 +19,11 @@
 <body>
   <h1>Redirecting to Raw Githack on Chrome Web Store...</h1>
   <p>If you are not redirected automatically, please click this link:</p>
-  <p><a href="https://chromewebstore.google.com/detail/raw-githack/iichepgnbggmoaijfiphjodmhkbijmkf">Raw Githack on Chrome Web Store</a></p>
+  <p><a id="store-link" href="https://chromewebstore.google.com/detail/raw-githack/iichepgnbggmoaijfiphjodmhkbijmkf">Raw Githack on Chrome Web Store</a></p>
 
+  <script>
+    const redirectLink = document.getElementById('store-link').href;
+    window.location.replace(redirectLink);
+  </script>
 </body>
 </html>
