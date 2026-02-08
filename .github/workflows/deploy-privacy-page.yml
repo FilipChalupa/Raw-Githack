@@ -16,6 +16,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ # This will publish the entire root directory
-          # You can specify a subdirectory if privacy.html is not in the root
-          # For example: publish_dir: ./docs if privacy.html is in docs/
+          publish_dir: ./web
